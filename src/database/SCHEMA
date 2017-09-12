@@ -1,0 +1,52 @@
+SCHEMA
+
+users
+  name
+  multiplier: 1
+  .weekPoints
+  .totalPoints
+  .cumulativePoints
+  .weekRank
+  .totalRank
+  .cumulativeRank
+
+words
+  value
+  //created_by
+  .weekOccourrences
+  .cumulativeOccourrences
+  .weekRank
+  .cumulativeRank
+
+points
+  id
+  userName
+  wordValue
+  weekId: .currentWeekId() REACT_ROUTER
+  time: Date.now()
+
+weeks
+  id: 2017_35
+  userNames: []
+  wordValues: []
+  pointIds: []
+  .pointsGroupedByUserNames: {"Carlo": {"word1Value": 2, "word3Value": 1, "WEEK": 3, "PAST": 12, "TOTAL": 15}, "Daniel": {...}, ...}
+  .pointsGroupedByWordValues: {"word1Value": 15, "word2Value": 4, ...}
+  .winner : ""
+
+ui
+  //uuid: uuid.randomblabla
+  navigation: {open: false}
+  //weekID: .currentWeekId() REACT_ROUTER
+
+
+createUser(name, multiplier=1)
+updateUser(name, multiplier)
+destroyUser(name)
+
+replaceWord(newValue, oldValue)
+
+createPoint(userName, wordValue)
+undoCreatePoint(userName, wordValue)
+
+461271
